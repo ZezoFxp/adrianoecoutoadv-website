@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/20 pt-8 text-center text-white/70 text-sm">
-          <p>© {new Date().getFullYear()} Adriano & Couto Advocacia. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Adriano & Couto Advogados Associados. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
