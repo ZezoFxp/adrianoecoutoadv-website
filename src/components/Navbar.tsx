@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
@@ -60,12 +59,6 @@ const Navbar = () => {
             >
               Contato
             </button>
-            <Button
-              onClick={() => window.open("https://api.whatsapp.com/send?phone=5521974452474", "_blank")}
-              className="bg-accent hover:bg-accent/90"
-            >
-              WhatsApp
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -104,12 +97,6 @@ const Navbar = () => {
             >
               Contato
             </button>
-            <Button
-              onClick={() => window.open("https://api.whatsapp.com/send?phone=5521974452474", "_blank")}
-              className="w-full bg-accent hover:bg-accent/90"
-            >
-              WhatsApp
-            </Button>
           </div>
         )}
       </div>

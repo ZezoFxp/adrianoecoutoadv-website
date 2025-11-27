@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -77,6 +77,23 @@ const Contact = () => {
                     className="text-foreground/70 hover:text-accent transition-colors"
                   >
                     contato@adrianoecoutoadv.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-6 bg-background rounded-xl">
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MessageCircle className="text-accent" size={24} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">WhatsApp</h3>
+                  <a
+                    href="https://api.whatsapp.com/send?phone=5521974452474"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground/70 hover:text-accent transition-colors"
+                  >
+                    (21) 97445-2474
                   </a>
                 </div>
               </div>
