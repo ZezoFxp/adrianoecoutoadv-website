@@ -19,15 +19,91 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    // Validação básica
+    const trimmedData = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim(),
+      message: formData.message.trim(),
+    };
+
+    // Validação de tamanho
+    if (trimmedData.name.length > 100) {
       toast({
-        title: "Mensagem enviada!",
-        description: "Entraremos em contato em breve.",
+        title: "Nome muito longo",
+        description: "O nome deve ter no máximo 100 caracteres.",
+        variant: "destructive",
       });
-      setFormData({ name: "", email: "", phone: "", message: "" });
       setIsSubmitting(false);
-    }, 1000);
+      return;
+    }
+
+    if (trimmedData.email.length > 255) {
+      toast({
+        title: "Email muito longo",
+        description: "O email deve ter no máximo 255 caracteres.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (trimmedData.message.length > 2000) {
+      toast({
+        title: "Mensagem muito longa",
+        description: "A mensagem deve ter no máximo 2000 caracteres.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Validação de email básica
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(trimmedData.email)) {
+      toast({
+        title: "Email inválido",
+        description: "Por favor, insira um email válido.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+          },
+          body: JSON.stringify(trimmedData),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        toast({
+          title: "Mensagem enviada!",
+          description: "Entraremos em contato em breve.",
+        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        throw new Error(data.error || "Erro ao enviar mensagem");
+      }
+    } catch (error) {
+      console.error("Erro ao enviar:", error);
+      toast({
+        title: "Erro ao enviar",
+        description: "Tente novamente mais tarde ou entre em contato por telefone.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
