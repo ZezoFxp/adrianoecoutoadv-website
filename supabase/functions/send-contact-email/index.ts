@@ -74,7 +74,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Enviar email para o escritório
     const emailResponse = await resend.emails.send({
-      from: "Contato Site <onboarding@resend.dev>",
+      from: "Contato Site <nao-responda@adrianoecoutoadv.com>",
       to: ["jose@adrianoecoutoadv.com"],
       subject: `Novo contato de ${escapeHtml(sanitizedData.name)}`,
       html: `
