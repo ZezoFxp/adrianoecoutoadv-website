@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">Adriano & Couto</h3>
+            <h3 className="text-2xl font-bold mb-4">Adriano & Couto Advogados Associados</h3>
             <p className="text-white/80">
               Advocacia especializada em recuperação de crédito e direito empresarial
             </p>
@@ -31,7 +31,18 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/20 pt-8 text-center text-white/70 text-sm">
-          <p>© {new Date().getFullYear()} Adriano & Couto Advogados Associados. Todos os direitos reservados.</p>
+          <p>Desenvolvido por 
+            <span>
+              <a
+                href="https://api.whatsapp.com/send?phone=5521990360555"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-accent transition-colors ml-1 mr-1">
+                  Jose M. Bandeira 
+                </a>
+              </span> 
+              | © {new Date().getFullYear()} Adriano & Couto Advogados Associados. Todos os direitos reservados.
+          </p>
         </div>
       </div>
     </footer>

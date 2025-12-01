@@ -1,73 +1,37 @@
-# Welcome to your Lovable project
+# ⚖️ Landing Page - Adriano & Couto Advocacia
 
-## Project info
+## 📖 Sobre o Projeto
 
-**URL**: https://lovable.dev/projects/0e1a7ce9-4a1b-4f0e-a276-a2438a519e33
+Este é um projeto acadêmico desenvolvido com o objetivo de criar uma presença digital moderna e responsiva para um escritório de advocacia. A aplicação consiste em uma Landing Page de alta performance focada em conversão e apresentação de serviços jurídicos.
 
-## How can I edit this code?
+O diferencial técnico deste projeto reside na integração de ferramentas de **desenvolvimento assistido por IA (Vibecoding)** para a interface e uma arquitetura robusta para o envio de formulários de contato e visando entregar o máximo de informações sobre o serviço do escritório.
 
-There are several ways of editing your application.
+## 🚀 Tecnologias Utilizadas
 
-**Use Lovable**
+O projeto foi construído utilizando uma stack moderna focada em performance e experiência de desenvolvimento (DX):
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0e1a7ce9-4a1b-4f0e-a276-a2438a519e33) and start prompting.
+* **[Lovable](https://lovable.dev/):** Utilizado para a prototipagem rápida e geração da base da interface (UI), acelerando o processo de design para código (**Lovable** que inclusive vem ganhando destaque no mercado de desenvolvimento).
+* **[Vite](https://vitejs.dev/):** Build tool de nova geração, garantindo um ambiente de desenvolvimento extremamente rápido.
+* **[TypeScript](https://www.typescriptlang.org/):** Para garantir a tipagem estática, segurança e escalabilidade do código.
+* **[React](https://reactjs.org/):** Biblioteca para construção da interface do usuário.
+* **[Tailwind CSS](https://tailwindcss.com/):** Framework de CSS utility-first para estilização ágil e responsiva.
+* **[Resend API](https://resend.com/):** Solução moderna de e-mail utilizada no backend para processar os formulários de contato e encaminhar as mensagens diretamente para a caixa de entrada do escritório.
 
-Changes made via Lovable will be committed automatically to this repo.
+## ⚙️ Arquitetura e Funcionalidades
 
-**Use your preferred IDE**
+### Fluxo de Contato
+A aplicação possui um "micro-backend" integrado para lidar com dados sensíveis de forma segura:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1.  **Formulário:** O usuário preenche os dados (Nome, Email, Telefone, Mensagem) na Landing Page.
+2.  **Validação:** Os dados são validados no frontend (Zod/React Hook Form).
+3.  **API Call:** O frontend envia uma requisição para a rota de API interna.
+4.  **Resend:** O backend processa a requisição e utiliza a API do **Resend** para disparar o e-mail formatado para o setor responsável do escritório.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🎨 Layout e Design
 
-Follow these steps:
+O layout foi concebido para transmitir seriedade, confiança e profissionalismo, atributos essenciais para a área jurídica. A utilização do **Lovable** permitiu iterar rapidamente sobre componentes visuais como:
+* Hero Section com Call to Action (CTA) claro.
+* Seção de Áreas de Atuação.
+* Formulário de Contato acessível.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/0e1a7ce9-4a1b-4f0e-a276-a2438a519e33) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Desenvolvido por Jose Messias Bandeira da Silva 🎓
